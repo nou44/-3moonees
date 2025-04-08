@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>moonees promo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- الخلفية ثلاثية الأبعاد -->
+  <canvas id="bg"></canvas>
+
+  <!-- الهيدر -->
+  
+   <section class="hero-section">
+    <div class="logo"><img src="image/logo.png" alt="logo"></div>
+   <h1> collectin carte</h1>
+   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur 
+    </h2>
+   </section>
+  <!-- قسم البطاقات -->
+  <section class="card-section">
+    <div class="container">
+      <!-- البطاقات -->
+      <div class="card">
+        <img class="fade-img" src="image/promo 6.jpeg" alt="صورة 1">
+        <img class="fade-img" src="image/promo 5.jpg" alt="صورة 2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             </p>
+            
+      </div>
+      <div class="card">
+        <img class="fade-img" src="image/promo 7.jpg" alt="صورة 1">
+        <img class="fade-img" src="image/promo 8.jpg" alt="صورة 2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisici
+             </p>
+      </div>
+      <div class="card">
+        <img class="fade-img" src="image/promo 3.jpg" alt="صورة 1">
+        <img class="fade-img" src="image/promo 4.jpg" alt="صورة 2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
+            
+             </p>
+      </div>
+      <div class="card">
+        <img class="fade-img" src="image/promo 1.jpg" alt="صورة 1">
+        <img class="fade-img" src="image/promo 2.jpeg" alt="صورة 2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+             
+             </p>
+      </div>
+      
+    </div>
+    <canvas id="moonCanvas"></canvas>
+   <!-- زر الطلب والنموذج -->
+<button class="order-btn" onclick="toggleForm()">Order For Free</button>
+
+<div class="form-popup" id="formBox">
+  <input type="email" id="email" placeholder="Enter your email">
+  <input type="text" id="promo" placeholder="Enter promo code">
+  <button class="submit-btn" onclick="submitForm()">Confirm</button>
+</div>
+<footer class="footer-section">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <img src="image/logo.png" alt="Group Logo" class="logo-img">
+      </div>
+      <div class="footer-info">
+          <p>&copy; 2025 Moonees. All Rights Reserved.</p>
+          <p>Website Designed by <span>Yahya Draoui</span></p>
+      </div>
+  </div>
+</footer>
+<!-- روابط السكريبت -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
