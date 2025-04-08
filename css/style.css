@@ -1,1 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@300..700&family=Neucha&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(to right, #9a8b9d, #3d0149);
+  min-height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  font-family: 'Chewy', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+/* اللوغو في يمين الهيدر */
+ .logo {
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  transform: translateY(-50%);
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@keyframes smoothDropIn {
+  0% {
+    transform: translateY(-60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(15px) scale(1.02);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-section h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: smoothDropIn 1.2s ease-out forwards;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  word-break: break-word;
+  opacity: 0;
+}
+
+.hero-section h2 {
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: #ffcc00;
+  animation: smoothDropIn 1.5s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+/* خلفية الثلاثي الأبعاد */
+canvas#bg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* تخطيط البطاقات */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* تنسيق كل بطاقة */
+.card {
+  width: 180px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+/* عند إضافة كلاس show يتم تفعيل الأنيميشن */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+#moonCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* حتى يكون في الخلفية */
+ pointer-events: none;
+ background: transparent;
+}
+/* تنسيق الصور داخل البطاقة مع تأثير ظهور fade-in */
+.card img {
+  width: 60%;
+  display: block;
+  margin: 0 auto 5px auto;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* عند ظهور البطاقة، تُفعّل أنيميشن الصور مع تأخير مختلف لكل صورة */
+.card.show img:nth-of-type(1) {
+  animation: fadeInImg 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.card.show img:nth-of-type(2) {
+  animation: fadeInImg 0.6s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* مفتاح الأنيميشن fadeInImg */
+@keyframes fadeInImg {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* تنسيق النص داخل البطاقة */
+.card p {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+/* الأزرار والنموذج */
+.order-btn {
+    position: relative;
+    bottom: 50%;
+    left: 40%;
+    transform: translateY(50%);
+    background-color:#ffcc00;
+
+    color: white;
+    border: 2px solid #ffcc00;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    animation: popIn 1s ease forwards;
+    font-family: 'Chewy', cursive;
+  }
+ @media screen and (max-width: 600px){
+  .order-btn{
+    left: 31%;
+  }
+  .logo{
+    top: 30px;
+  }
+ }
+  
+  .order-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .form-popup {
+    position: fixed;
+    bottom: 150px;
+    right: 3px;
+    background-color: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 260px;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    animation: slideUp 0.8s ease forwards;
+  }
+ 
+  
+  .form-popup input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-btn {
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .message {
+    font-size: 0.9rem;
+    margin-top: -8px;
+    margin-bottom: 5px;
+    padding: 6px;
+    border-radius: 5px;
+    animation: fadeMessage 0.8s ease-in-out;
+  }
+  
+  .message.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeMessage {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .footer-section {
+  
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards; /* تفعيل الأنيميشن عند الوصول */
+}
+
+.footer-section.active {
+    opacity: 1;
+    animation: fadeIn 1s ease-out forwards; /* التأثير يظهر مرة أخرى عند الوصول */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo img {
+    width: 150px;
+    animation: logoFadeIn 1.5s ease-out;
+}
+
+.footer-info {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-info span {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
