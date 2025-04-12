@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.5 // التفعيل عندما يظهر 40% من البطاقة
+    threshold: 0.1 // التفعيل عندما يظهر 40% من البطاقة
   });
 
   cards.forEach(card => observer.observe(card));
