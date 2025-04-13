@@ -105,7 +105,7 @@ canvas#bg {
 
 /* تنسيق كل بطاقة */
 .card {
-  width: 180px;
+  width: 200px;
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   padding: 10px;
