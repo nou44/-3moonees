@@ -323,3 +323,24 @@ canvas#bg {
         transform: scale(1);
     }
 }
+
+  .social-icons{
+    width: 50px;
+    position: fixed;
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.social-icons img{
+    display: block;
+    width: 25px;
+    margin: 0 auto 20px;
+    cursor: pointer;
+    transition: 2s;
+}
+.social-icons img:hover{
+    transform: rotate(360deg);
+    
+
+}
