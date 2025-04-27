@@ -165,7 +165,8 @@ canvas#bg {
   color: #ffffff;
   font-weight: bold;
   margin-top: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
+   font-family:"Titan One", sans-serif; 
 }
 /* الأزرار والنموذج */
 .order-btn {
