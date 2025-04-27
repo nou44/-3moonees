@@ -162,7 +162,7 @@ canvas#bg {
 /* تنسيق النص داخل البطاقة */
 .card p {
   text-align: center;
-  color: #ffffff;
+  color: #ffcc00;
   font-weight: bold;
   margin-top: 5px;
   font-size: 1rem;
