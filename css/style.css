@@ -74,6 +74,7 @@ body {
   margin-bottom: 10px;
   word-break: break-word;
   opacity: 0;
+    font-family:"Titan One", sans-serif; 
 }
 
 .hero-section h2 {
